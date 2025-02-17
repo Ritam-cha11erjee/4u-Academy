@@ -7,6 +7,8 @@
 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
   <style>
 
 @media (min-width: 769px) {
@@ -81,6 +83,43 @@
             height: 24vw;
             object-fit: cover;
             width: 16%;
+        }
+
+        #socialLinks{
+            /* background-color: yellow; */
+            width: 15vw;
+            position: relative;
+            aspect-ratio: 16/23;
+            left: 25vw;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5%;
+            
+        }
+
+        .links{
+            width: 100%;
+            aspect-ratio: 16/5;
+            background-color: black;
+            border-radius: 0.5vw;
+            cursor: pointer;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2%;
+            border: 1.5px solid white;
+            transition: transform 0.5s;
+            box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.356);
+
+        }
+
+        .links:hover{
+            transform: scale(1.03);
+            transition: transform 0.5s;
         }
 
         #backgroundArt{
@@ -459,6 +498,47 @@
         overflow: hidden;
     }
 
+
+    #socialLinks{
+            background-color: #6a0000;
+            width: 100%;
+            position: relative;
+            aspect-ratio: 16/3;
+            /* left: 25vw; */
+            text-align: center;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 5vw;
+            /* padding: 0 5%; */
+        }
+
+        .links{
+            width: 40%;
+            aspect-ratio: 16/4;
+            background-color: black;
+            border-radius: 0.5vw;
+            cursor: pointer;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2%;
+            border: 1.5px solid white;
+            transition: transform 0.5s;
+            font-size: 80%;
+            box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.356);
+            padding: 0.5%;
+
+        }
+
+        .links:hover{
+            transform: scale(1.03);
+            transition: transform 0.5s;
+        }
+
+
     .hero .buttons {
         display: flex;
         flex-direction: row;
@@ -704,6 +784,12 @@
   </section>
   <section class = "hero2">
     <video id = "myVideo" src="weeklyHighlight.mp4" loop playsinline></video>
+    <div id="socialLinks">
+        <a class="links" id="facebook" href = "https://www.facebook.com/profile.php?id=61571197801074" target = "_blank"><i class="fa-brands fa-facebook"></i> 4u Academy</a>
+        <a class="links" id="instagram" href = "https://www.instagram.com/4u_academy_official/" target = "_blank"><i class="fa-brands fa-instagram"></i>
+            4u_academy_official</a>
+
+    </div>
   </section>
 </div>
   <section class="features">
