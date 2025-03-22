@@ -25,10 +25,15 @@
              color: #ffffff;
              font-weight: 500;
              font-size: 1.5vw;
+             border: 0px;
+
          }
          header nav a:hover{
             color: rgb(255, 0, 0);
             transition: color 0.3s;
+            padding-bottom: 2%;
+            border-bottom: 3px solid red;
+            transition: border-bottom 0.1s;
          }
          header nav a:active{
             color: rgb(104, 0, 0);
@@ -54,17 +59,19 @@
          .sectionContainer{
              display: grid;
              grid-template-columns: 55% 45%;
-             background-color: #a00;
+             background-color: white;
              aspect-ratio: 16/5;
+             color: #c00;
  
  
          }
          .hero {
-             color: #fff;
+            color: #c00;
              text-align: left;
              padding: 3% 5%;
              /* background-color: blue; */
              grid-column: 1;
+             padding-left: 10%;
          }
  
          .hero2{
@@ -74,33 +81,46 @@
              overflow: hidden; 
          }
  
+         #successStoryContainer{
+            background-color: #c00;
+            width: 75%;
+            aspect-ratio: 10/8.5;
+            margin-left: 2.5%;
+            margin-top: 4%;
+            border-radius: 5%;
+            box-shadow: 5px 2px 10px rgba(82, 0, 0, 0.719);
+
+         }
+
          .hero2 video{
              position: absolute;
-             top: 46vw;
-             right: 25%;
-             height: 24vw;
+             top: 45vw;
+             right: 12%;
+             height: 17vw;
              object-fit: cover;
-             width: 16%;
+             width: 30%;
          }
  
          #socialLinks{
              /* background-color: yellow; */
-             width: 15vw;
+             width: 8vw;
              position: relative;
              aspect-ratio: 16/23;
-             left: 25vw;
+             left: 35vw;
+             top: -80%;
              text-align: center;
              display: flex;
              flex-direction: column;
              justify-content: center;
              align-items: center;
-             gap: 5%;
+             gap: 10%;
+             /* background-color: blue; */
              
          }
  
          .links{
-             width: 100%;
-             aspect-ratio: 16/5;
+             width: 50%;
+             aspect-ratio: 5/5;
              background-color: #000000ef;
              border-radius: 0.5vw;
              cursor: pointer;
@@ -147,10 +167,10 @@
          }
          
          .hero .buttons button {
-             background-color: white;
-             color: #c00;
+             background-color: #c00;
+             color: white;
              padding: 2% 2%;
-             font-size: 120%;
+             font-size: 170%;
              font-weight: 600;
              border-radius: 5px;
              text-decoration: none;
@@ -162,13 +182,18 @@
          }
          .hero .buttons button:hover{
              transform: scale(1.05);
-             transition: transform 0.5s;
+             transition: transform 0.2s;
          }
+
+         #hero_subHeading{
+            color: black;
+         }
+
          .messageBtn{
              background-color: black;
              color: white;
              padding: 2% 2%;
-             font-size: 120%;
+             font-size: 170%;
              font-weight: 600;
              border-radius: 5px;
              text-decoration: none;
@@ -176,6 +201,7 @@
              border: none;
              cursor: pointer;
              transition: transform 0.5s;
+
  
          }
  
@@ -190,8 +216,8 @@
              display: flex;
              justify-content: space-around;
              padding: 20px;
-             background-color: #a00;
-             color: #fff;
+             /* background-color: #b20900; */
+             color: #c00;
              padding-top: 2%;
          }
          .features div {
@@ -210,9 +236,59 @@
          }
          .subSubHeading{
              font-weight: 600;
-             color: white !important;
- 
+             color: #c00 !important;
          }
+ 
+        .highlights{
+            text-align: center;
+            background-color: #b20900;
+            margin: 0;
+            padding-top: 3%;
+            color: white;
+        }
+        .highlights p{
+            padding: 0.7% 20%;
+            font-size: 1.2em;
+
+        }
+
+        .highlights h2{
+            font-size: 2em;
+            margin-top: 0;
+        }
+
+        .highlightContainer{
+            display: flex;
+            flex-direction: row;
+            padding: 2% 10%;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            /* background-color: blue; */
+            flex-wrap: wrap;
+        }
+
+        .highlightVideos{
+            margin: 3% 3%;
+            transition: transform 1s;
+            box-shadow: 5px 5px 10px rgba(82, 0, 0, 0.719);
+            border-radius: 0.5rem;
+
+
+        }
+        .highlightVideos:hover{
+            transform: scale(1.1);
+            transition: transform 0.3s;
+        }
+
+        .highlightVideos_video{
+            height: 22.5vw;
+            object-fit: cover;
+            width: 15vw;
+            border-radius: 0.5rem;
+        }
+
+
          .programs {
              background-color: #f8f8f8;
              padding: 1% 5%;
@@ -485,7 +561,7 @@
      .hero2 video {
          position: static;
          width: 100%;
-         height: 150vw;
+         height: 55vw;
  
          margin-top: 10px;
          object-fit: cover;
@@ -591,6 +667,60 @@
          margin-top: 6% !important;
          color: white !important;
      }
+
+     .highlights{
+        text-align: center;
+        background-color: #b20900;
+        margin: 0;
+        padding-top: 3%;
+        color: white;
+    }
+    .highlights p{
+        padding: 0.7% 8%;
+        font-size: 1.2em;
+
+    }
+
+    .highlights h2{
+        font-size: 2em;
+        margin-top: 5%;
+    }
+
+    .highlightContainer{
+        display: flex;
+        flex-direction: row;
+        padding: 2% 2%;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        /* background-color: blue; */
+        flex-wrap: wrap;
+        padding-bottom: 10%;
+    }
+
+    .highlightVideos{
+        margin: 3% 4%;
+        transition: transform 1s;
+        box-shadow: 5px 5px 10px rgba(82, 0, 0, 0.719);
+        border-radius: 0.5rem;
+
+
+    }
+    .highlightVideos:hover{
+        transform: scale(1.1);
+        transition: transform 0.3s;
+    }
+
+    .highlightVideos_video{
+        height: 36vw;
+        object-fit: cover;
+        width: 23.2vw;
+        border-radius: 0.5rem;
+    }
+
+
+
+
      .fas{
          transform: scale(2);
      }

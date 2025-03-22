@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const video = document.getElementById("myVideo");
+    let highlightVideos = document.querySelectorAll(".highlightVideos_video");
 
     function checkVideoVisibility() {
         const rect = video.getBoundingClientRect();
@@ -19,6 +20,23 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     requestAnimationFrame(checkVideoVisibility);
+
+
+    highlightVideos.forEach(highlightVideo => {
+        highlightVideo.addEventListener("mouseover", () => {
+            highlightVideo.play();
+            console.log("hovered");
+            
+        });
+    
+        highlightVideo.addEventListener("mouseleave", () => {
+            highlightVideo.pause();
+        });
+    });
+    
+
+
+
 });
 
 
