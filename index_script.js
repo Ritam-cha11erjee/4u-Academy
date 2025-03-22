@@ -1,25 +1,44 @@
 document.addEventListener("DOMContentLoaded", function () {
     const video = document.getElementById("myVideo");
     let highlightVideos = document.querySelectorAll(".highlightVideos_video");
+    let play_video = document.querySelector("#play_video");
 
-    function checkVideoVisibility() {
-        const rect = video.getBoundingClientRect();
-        const inViewport = rect.top >= 0 && rect.bottom <= window.innerHeight;
+    play_video.addEventListener("click", () => {
 
-        if (inViewport) {
-            if (video.paused) {
-                video.play();
-            }
-        } else {
-            if (!video.paused) {
-                video.pause();
-            }
+        if (video.paused) {
+            video.play();
+            play_video.style.display = "none";
         }
+    });
 
-        requestAnimationFrame(checkVideoVisibility);
-    }
+    video.addEventListener("click", () => {
 
-    requestAnimationFrame(checkVideoVisibility);
+        if (!video.paused) {
+            video.pause();
+            play_video.style.display = "block";
+        }
+    });
+
+    //function checkVideoVisibility() {
+    //     const rect = video.getBoundingClientRect();
+    //     const inViewport = rect.top >= 0 && rect.bottom <= window.innerHeight;
+
+    //     if (inViewport) {
+    //         if (video.paused) {
+    //             video.play();
+    //             play_video.style.display = "none";
+    //         }
+    //     } else {
+    //         if (!video.paused) {
+    //             video.pause();
+    //             play_video.style.display = "block";
+    //         }
+    //     }
+
+    //     requestAnimationFrame(checkVideoVisibility);
+    // }
+
+    // requestAnimationFrame(checkVideoVisibility);
 
 
     highlightVideos.forEach(highlightVideo => {
@@ -37,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-});
+ });
 
 
 document.querySelectorAll('.enroll-Btn').forEach(element => element.addEventListener('click', function() {

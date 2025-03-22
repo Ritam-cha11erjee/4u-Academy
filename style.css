@@ -92,6 +92,20 @@
 
          }
 
+         #play_video{
+            position: absolute;
+            top: 45vw;
+            right: 12%;
+            height: 17vw;
+            object-fit: cover;
+            width: 30%;
+            z-index: 30;
+            cursor: pointer;
+            display: block;
+            transition: display 0.5s;
+            opacity: 70%;
+         }
+
          .hero2 video{
              position: absolute;
              top: 45vw;
@@ -99,6 +113,9 @@
              height: 17vw;
              object-fit: cover;
              width: 30%;
+            z-index: 20;
+            cursor: pointer;
+
          }
  
          #socialLinks{
