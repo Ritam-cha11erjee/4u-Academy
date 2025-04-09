@@ -312,6 +312,16 @@
  
              text-align: center;
          }
+
+         .programs-list{
+            /* background-color: red; */
+            /* padding: 2%; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+         }
+
          .programs h2 {
              font-size: 2em;
              margin-bottom: 20px;
@@ -319,38 +329,86 @@
          .programs p {
              font-size: 1.2em;
              margin-bottom: 40px;
-             padding: 0.7% 20%;
+             padding: 0.7% 10%;
          }
          .programs .program {
              background-color: #fff;
-             padding: 20px;
-             margin: 20px;
+             margin: 1%;
+             margin-top: 0;
              border-radius: 10px;
              box-shadow: 0 0 10px rgba(0,0,0,0.1);
-             flex: 1;
-             width: 28vw;
+             width: 25vw;
+             aspect-ratio: 5/5.2;
              display: inline-block;
              text-align: left;
-             padding: 1% 3%;
+             padding: 0;
              margin-bottom: 5%;
              transition: transform 1s;
 
- 
          }
          .program:hover{
              transform: scale(1.02);
              transition: transform 0.5s;
          }
+         .programTop{
+            padding: 1% 10%;
+            height: 75%;
+         }
+
+         .grid3{
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(250, 227, 227);
+            height: 8%;
+
+         }
+
+         .gridSubpart{
+
+            /* background-color: blue; */
+            padding: 1%;
+            font-size: 80%;
+            width: 28%;
+            text-align: center;
+
+         }
+         .gridSubpart2{
+
+            /* background-color: blue; */
+            padding: 2% 1%;
+            font-size: 100%;
+            width: 28%;
+            text-align: center;
+            font-weight: 700;
+            /* padding-bottom: 5%; */
+         }
+
+         .viewDetails{
+            background-color: #c00;
+            width: 100%;
+            aspect-ratio: 10/1.5;
+            text-align: center;
+            line-height: 220%;
+            font-size: 150%;
+            padding: 0;
+            border-bottom-left-radius: 0.7rem;
+            border-bottom-right-radius: 0.7rem;
+            cursor: pointer;
+            color: white;
+
+         }
  
  
          .programs .program h3 {
-             font-size: 1.5em;
-             margin-bottom: 0%;
+             font-size: 1.3em;
+             margin-bottom: 2%;
          }
-         .programs .program p {
+         .programs .program li {
              font-size: 1.2vw;
-             margin: 10px 0;
-             padding: 0.7% 5%;
+             margin: 3% 0;
+             padding: 0.7% 0%;
          }
          .programs .program .price {
              font-size: 1.8vw;
@@ -360,39 +418,15 @@
              margin-left: 0;
              padding-left: 0;
          }
- 
-         .perWeek{
-             margin: 0 !important;
-             padding: 0 !important;
-             color: black;
-             font-weight: 600;
-             margin-top: 8% !important;
-         }
- 
-         .decoyPrice{
-             font-size: 2vw !important;
-             margin: 0 !important;
-             padding: 0 !important;
-         }
- 
-         .leftSubPart{
-             display: inline-block;
-             margin-right: 9%;
-         }
-         .rightSubPart{
-             
-             display: inline-block;
-             text-align: right;
-             position: relative;
-             left: 2vw;
-         }
          
          .subHeading2{
-             font-style: italic;
-             color: maroon;
+             /* font-style: italic; */
+             color: #c00;
              font-weight: 600;
              margin-top: 0 !important;
              padding-left: 0 !important;
+             font-size: 75% !important; 
+             margin-bottom: 1% !important;
          }
          .why-choose-us {
              padding: 50px 20px;
@@ -589,6 +623,21 @@
         box-shadow: 5px 2px 10px rgba(82, 0, 0, 0.719);
 
      }
+
+     #play_video{
+        position: absolute;
+        top: 32%;
+        left: 50%;
+        object-fit: cover;
+        width: 86%;
+        aspect-ratio: 16/9.5;
+        z-index: 30;
+        cursor: pointer;
+        display: block;
+        transition: display 0.5s;
+        opacity: 70%;
+        transform: translate(-50%, -50%)
+     }
  
      .hero2 video {
          position: static;
@@ -603,6 +652,7 @@
          background-color: white;
          margin: 0;
          overflow: hidden;
+         position: relative;
      }
  
  
@@ -777,13 +827,72 @@
  
      .programs .program {
          width: 80%;
+         aspect-ratio: 5/5.2;
+
          margin: 10px auto;
          background-color: white;
          border-radius: 1.5rem;
          box-shadow: 0 0 10px rgba(0,0,0,0.1);
          padding: 3%;
          margin-bottom: 8%;
+         padding: 0;
      }
+
+
+     .programTop{
+        padding: 1% 10%;
+        height: 90%;
+     }
+
+     ul{
+        text-align: left;
+     }
+
+     .grid3{
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(250, 227, 227);
+        height: 8%;
+
+     }
+
+     .gridSubpart{
+
+        /* background-color: blue; */
+        padding: 1%;
+        font-size: 80%;
+        width: 28%;
+        text-align: center;
+
+     }
+     .gridSubpart2{
+
+        /* background-color: blue; */
+        padding: 2% 1%;
+        font-size: 100%;
+        width: 28%;
+        text-align: center;
+        font-weight: 700;
+        /* padding-bottom: 5%; */
+     }
+
+     .viewDetails{
+        background-color: #c00;
+        width: 100%;
+        aspect-ratio: 10/1.5;
+        text-align: center;
+        line-height: 220%;
+        font-size: 150%;
+        padding: 0;
+        border-bottom-left-radius: 0.7rem;
+        border-bottom-right-radius: 0.7rem;
+        cursor: pointer;
+        color: white;
+
+     }
+
  
  
      .programs .program h3 {
