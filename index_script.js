@@ -19,28 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    //function checkVideoVisibility() {
-    //     const rect = video.getBoundingClientRect();
-    //     const inViewport = rect.top >= 0 && rect.bottom <= window.innerHeight;
-
-    //     if (inViewport) {
-    //         if (video.paused) {
-    //             video.play();
-    //             play_video.style.display = "none";
-    //         }
-    //     } else {
-    //         if (!video.paused) {
-    //             video.pause();
-    //             play_video.style.display = "block";
-    //         }
-    //     }
-
-    //     requestAnimationFrame(checkVideoVisibility);
-    // }
-
-    // requestAnimationFrame(checkVideoVisibility);
-
-
     highlightVideos.forEach(highlightVideo => {
         highlightVideo.addEventListener("mouseover", () => {
             highlightVideo.play();
@@ -67,3 +45,7 @@ document.querySelectorAll('.enroll-Btn').forEach(element => element.addEventList
     document.getElementById('closeBtn').addEventListener('click', function() {
         document.getElementById('popup').style.display = 'none';
       });
+
+document.querySelector("#detail1").addEventListener("click", () =>{
+    window.location.href = "CorporateCommunication.html";
+});
