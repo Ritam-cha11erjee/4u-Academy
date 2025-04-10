@@ -49,3 +49,7 @@ document.querySelectorAll('.enroll-Btn').forEach(element => element.addEventList
 document.querySelector("#detail1").addEventListener("click", () =>{
     window.location.href = "CorporateCommunication.html";
 });
+
+document.querySelector("#detail3").addEventListener("click", () =>{
+    window.location.href = "KidsBatch.html";
+});
