@@ -1,0 +1,789 @@
+<html>
+<head>
+
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>
+      4u Academy | Corporate Communication Mastery
+    </title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="viewport" content="width=device-width,  initial-scale=1.0">
+  <meta name="description" content="Master Corporate Communication by learning essential Public Speaking, Leadership, Conflict Resolution, Persuasion, Negotiation, Assertiveness and Interview skills!">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+
+
+    <style>
+
+@media (min-width: 769px) {
+
+
+        body{
+            font-size: 1.8vw;
+            box-sizing: border-box;
+        }
+        h2{
+            font-size: 2.6vw !important;
+            color: #c00;
+        }
+        h1{
+            font-size: 160% !important;
+            color: black;
+            font-family: "Lexend", sans-serif;
+            font-weight: 700;
+
+        }
+
+        header {
+             background-color: #000000ef;
+             padding: 1% 2%;
+             display: flex;
+             justify-content: space-between;
+             align-items: center;
+             height: 5vw;
+         }
+         header img {
+             height: 100%;
+         }
+         header nav a {
+             margin: 0 5%;
+             text-decoration: none;
+             color: #ffffff;
+             font-weight: 500;
+             font-size: 1.5vw;
+             border: 0px;
+
+         }
+         header nav a:hover{
+            color: rgb(255, 0, 0);
+            transition: color 0.3s;
+            padding-bottom: 2%;
+            border-bottom: 3px solid red;
+            transition: border-bottom 0.1s;
+         }
+         header nav a:active{
+            color: rgb(104, 0, 0);
+            /* transition: color 0.3s; */
+         }
+         header nav{
+             width: 50%;
+             text-align: center;
+             align-items: center;
+             justify-content: center;
+             display: block;
+             margin: auto;
+             margin-left: 23.5%;
+ 
+         }
+         header .enroll-btn {
+             background-color: #c00;
+             color: #fff;
+             padding: 0.6% 1.5%;
+             border-radius: 5px;
+             text-decoration: none;
+             font-size: 70%;
+         }
+
+        .icon {
+            width: 40px;
+            height: 40px;
+        }
+
+        .gridContainer{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 40% 60%;
+            /* background-color: blue; */
+        }
+        .columnPics{
+            /* background-color: yellow; */
+            height: 100%;
+            scale: 1.05;
+            transition: transform 1s;
+
+        }
+        .columnPics:hover{
+            
+            transform: scale(1.01);
+            transition: transform 0.5s;
+        }
+
+        .textContainer{
+            padding-left: 3%;
+            padding-right: 2%;
+        }
+
+        .WhatToLearn{
+            padding: 3% 5%;
+            padding-bottom: 1%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 60% 40%;
+            background-color: rgb(231, 231, 231);
+            color: rgb(51, 51, 51);
+            margin-bottom: 0;
+        }
+
+        .WhatToLearnText{
+            /* background-color: yellow; */
+            padding-right: 0;
+            font-size: 100%;
+        }
+
+        .WhatToLearnImgContainer{
+            padding: 0;
+            /* background-color: red; */
+
+        }
+
+        .SecondImages{
+            transform: scale(0.9);
+            transition: transform 1.2s;
+            margin-top: -10%;
+        }
+
+        .SecondImages:hover{
+            transform: scale(0.94);
+            transition: transform 0.5s;
+        }
+
+        .learnHeader{
+            color: #c00;
+        }
+
+        .col-span-12 span{
+            color: black;
+        }
+
+        .courseBenefits{
+            /* text-align: center; */
+            font-size: 2vw;
+            background-color: rgb(48, 48, 48);
+            padding-top: 5%;
+            padding-left: 8% !important;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 50% 50%;
+        }
+        .courseBenefits ul{
+            color: rgb(212, 212, 212);
+
+        }
+
+        .courseBHeader{
+            padding-top: 3%;
+
+            color: white;
+        }
+
+        .button{
+            margin-left: 10%;
+            display: inline-block;
+            background-color: #c00;
+             color: white;
+             padding: 2% 2%;
+             font-size: 100%;
+             width: 30%;
+             text-align: center;
+             font-weight: 600;
+             border-radius: 5px;
+             text-decoration: none;
+             margin-right: 3%;
+             border: none;
+             cursor: pointer;
+             transition: transform 0.5s;
+             transition: transform 1s;
+ 
+        }
+
+        .button:hover{
+            transform: scale(1.05);
+            background-color: rgb(156, 5, 5);
+            transition: all 0.5s;
+        }
+
+        .benefits{
+            /* background-color: yellow; */
+        }
+
+        .socialLinks{
+            width: 40vw;
+            /* background-color: yellow; */
+             position: relative;
+             aspect-ratio: 16/8;
+             left: 2vw;
+             text-align: center;
+             display: flex;
+             flex-direction: row;
+             justify-content: center;
+             align-items: center;
+             gap: 10%;
+             display: inline-block;
+            padding-top: 22%;
+        }
+
+        .links{
+             width: 40%;
+             font-size: 60%;
+             aspect-ratio: 20/5;
+             background-color: #000000ef;
+             border-radius: 0.5vw;
+             cursor: pointer;
+             color: white;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             gap: 2%;
+             border: 1.5px solid white;
+             transition: transform 0.5s;
+             box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.356);
+             display: inline-block;
+             line-height: 300%;
+             padding: 0.5% 0;
+
+         }
+
+         .links:hover{
+            transform: scale(1.05);
+            transition: all 0.5s;
+         }
+
+         .button2{
+            margin-left: 10%;
+            display: block;
+            background-color: #c00;
+             color: white;
+             padding: 2% 2%;
+             font-size: 100%;
+             width: 80%;
+             text-align: center;
+             font-weight: 600;
+             border-radius: 5px;
+             text-decoration: none;
+             margin-right: 3%;
+             border: none;
+             cursor: pointer;
+             transition: transform 1s;
+             margin-top: 2%;
+             /* font-family: "Lexend", sans-serif; */
+         }
+
+         .button2:hover{
+            transform: scale(1.05);
+            background-color: rgb(156, 5, 5);
+            transition: all 0.5s;
+        }
+
+        .popup-overlay {
+       position: fixed;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100%;
+       background-color: rgba(0, 0, 0, 0.5); /* Black background with 50% opacity */
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       z-index: 999;
+       display: none;
+ 
+     }
+     /* Popup container */
+     .popup-content {
+       position: relative;
+       background-color: #fff;
+       padding: 20px;
+       border-radius: 8px;
+       width: 80%;
+       max-width: 600px; /* Adjust as needed */
+       box-sizing: border-box;
+     }
+     /* Close button */
+     .popup-close {
+       position: absolute;
+       top: 10px;
+       right: 10px;
+       background-color: #b91c1c; /* A deep red */
+       color: white;
+       border: none;
+       padding: 5px 10px;
+       border-radius: 4px;
+       cursor: pointer;
+       font-size: 16px;
+     }
+     /* Iframe styles */
+     .popup-iframe {
+       width: 100%;
+       height: 550px;
+       border: none;
+       border-radius: 8px;
+     }
+}
+
+
+
+
+
+
+
+
+
+
+
+ @media (max-width: 768px) {
+
+
+body{
+    font-size: 16px;
+         padding: 0%;
+         margin: 0;
+         font-family: 'Roboto', sans-serif;
+ 
+}
+h2{
+    font-size: 5vw !important;
+    color: #c00;
+}
+h1{
+    font-size: 160% !important;
+    color: black;
+    font-family: "Lexend", sans-serif;
+    font-weight: 700;
+
+}
+
+header {
+         flex-direction: row;
+         /* text-align: center; */
+         padding: 10px;
+         background-color: black;
+
+     }
+ 
+     header nav {
+         width: 50%;
+         display: inline;
+         position: absolute;
+         top: 2.5%;
+         margin-left: 18%;
+         font-size: 80%;
+         color: white;
+         text-decoration: none;
+     }
+ 
+     header nav a {
+         /* display: in; */
+         margin: 0% 3%;
+         color: white;
+     }
+     header .enroll-btn {
+         /* display: block; */
+         /* margin: 10px auto; */
+         padding: 8px 16px;
+         position: absolute;
+         top: 1%;
+         right: 2%;
+         background-color: #c00;
+         color: white;
+         text-decoration: none;
+     }
+
+.icon {
+    width: 40px;
+    height: 40px;
+}
+
+.gridContainer{
+    /* display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 40% 60%; */
+    /* background-color: blue; */
+}
+.columnPics{
+    /* background-color: yellow; */
+    /* height: 100%; */
+    scale: 1;
+    transition: transform 1s;
+
+}
+.columnPics:hover{
+    
+    transform: scale(1.01);
+    transition: transform 0.5s;
+}
+
+.textContainer{
+    padding-left: 3%;
+    padding-right: 2%;
+}
+
+.WhatToLearn{
+    padding: 3% 5%;
+    padding-bottom: 1%;
+    /* display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 60% 40%; */
+    background-color: rgb(231, 231, 231);
+    color: rgb(51, 51, 51);
+    margin-bottom: 0;
+}
+
+.WhatToLearnText{
+    /* background-color: yellow; */
+    padding-right: 0;
+    font-size: 100%;
+}
+
+.WhatToLearnImgContainer{
+    padding: 10% 0;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: row;
+    gap: 2%;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.SecondImages{
+    width: 45%;
+    /* background-color: #b91c1c; */
+    transition: transform 1.2s;
+    margin-top: -10%;
+    display: inline-block;
+}
+
+.SecondImages:hover{
+    transform: scale(0.94);
+    transition: transform 0.5s;
+}
+
+.learnHeader{
+    color: #c00;
+}
+
+.col-span-12 span{
+    color: black;
+}
+
+.courseBenefits{
+    /* text-align: center; */
+    font-size: 2vw;
+    background-color: rgb(48, 48, 48);
+    padding-top: 5%;
+    padding-left: 8% !important;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 50% 50%;
+}
+.courseBenefits ul{
+    color: rgb(212, 212, 212);
+
+}
+
+.courseBHeader{
+    padding-top: 3%;
+
+    color: white;
+}
+
+.button{
+    /* margin-left: 10%; */
+    display: inline-block;
+    background-color: #c00;
+     color: white;
+     padding: 3% 3%;
+     font-size: 130%;
+     width: 100%;
+     text-align: center;
+     font-weight: 600;
+     border-radius: 5px;
+     text-decoration: none;
+     margin-right: 3%;
+     border: none;
+     cursor: pointer;
+     margin-top: 2%;
+     transition: transform 0.5s;
+     transition: transform 1s;
+
+}
+
+.button:hover{
+    transform: scale(1.05);
+    background-color: rgb(156, 5, 5);
+    transition: all 0.5s;
+}
+
+.benefits{
+    /* background-color: yellow; */
+}
+
+.socialLinks{
+    width: 40vw;
+    /* background-color: yellow; */
+     position: relative;
+     aspect-ratio: 16/8;
+     left: 2vw;
+     text-align: center;
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     align-items: center;
+     gap: 10%;
+     display: inline-block;
+    padding-top: 22%;
+}
+
+.links{
+     width: 40%;
+     font-size: 60%;
+     aspect-ratio: 20/5;
+     background-color: #000000ef;
+     border-radius: 0.5vw;
+     cursor: pointer;
+     color: white;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 2%;
+     border: 1.5px solid white;
+     transition: transform 0.5s;
+     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.356);
+     display: inline-block;
+     line-height: 300%;
+     padding: 0.5% 0;
+
+ }
+
+ .links:hover{
+    transform: scale(1.05);
+    transition: all 0.5s;
+ }
+
+ .button2{
+    margin-left: 10%;
+    display: block;
+    background-color: #c00;
+     color: white;
+     padding: 2% 2%;
+     font-size: 100%;
+     width: 80%;
+     text-align: center;
+     font-weight: 600;
+     border-radius: 5px;
+     text-decoration: none;
+     margin-right: 3%;
+     border: none;
+     cursor: pointer;
+     transition: transform 1s;
+     margin-top: 2%;
+     /* font-family: "Lexend", sans-serif; */
+ }
+
+ .button2:hover{
+    transform: scale(1.05);
+    background-color: rgb(156, 5, 5);
+    transition: all 0.5s;
+}
+
+.popup-overlay {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5); /* Black background with 50% opacity */
+display: flex;
+justify-content: center;
+align-items: center;
+z-index: 999;
+display: none;
+
+}
+/* Popup container */
+.popup-content {
+position: relative;
+background-color: #fff;
+padding: 20px;
+border-radius: 8px;
+width: 80%;
+max-width: 600px; /* Adjust as needed */
+box-sizing: border-box;
+}
+/* Close button */
+.popup-close {
+position: absolute;
+top: 10px;
+right: 10px;
+background-color: #b91c1c; /* A deep red */
+color: white;
+border: none;
+padding: 5px 10px;
+border-radius: 4px;
+cursor: pointer;
+font-size: 16px;
+}
+/* Iframe styles */
+.popup-iframe {
+width: 100%;
+height: 550px;
+border: none;
+border-radius: 8px;
+}
+}
+
+
+    </style>
+</head>
+<body class="font-roboto">
+
+    <header>
+        <img alt="4u Academy Logo" height="40" src="logo.png" width="40"/>
+     
+        <nav>
+         <a href="index.html">
+          Home
+         </a>
+         <a href="index.html#programs-id">
+          Programs
+         </a>
+         <a href = "https://wa.me/message/NNZ2S7HFCVO2J1" target = "_blank">
+          Contact
+         </a>
+        </nav>
+        <a class="enroll-btn" href="#">
+         Enroll Now
+        </a>
+       </header>
+
+         <!-- Popup Modal -->
+  <div id="popup" class="popup-overlay">
+    <div class="popup-content">
+      <button id="closeBtn" class="popup-close">X</button>
+      <iframe 
+        class="popup-iframe"
+        src="https://docs.google.com/forms/d/e/1FAIpQLSdm75sCowp_VCGVp0KSfPgV8wIK4oExnyUVht9sAuiEi5189g/viewform?embedded=true" 
+        title="Google Form">
+        Loading…
+      </iframe>
+    </div>
+  </div>
+
+
+    <div class="gridContainer">
+        <div class="columnPics">
+            <img src="4u_academy_websitePic4.png" alt="">
+        </div>
+    <div class="textContainer">
+
+        <div class="bg-white p-6">
+            <h1 class=" font-bold">English Communication - Kids<br></h1>
+            <h2 class="text-lg font-bold">Online Course - ₹999/month<br><br></h2>
+            <div class="mt-4">
+                <h2 class="text-lg font-bold">Course Overview</h2>
+                <p class="mt-2">
+                    Build essential English skills. <br>
+                    Foster confidence and creative expression.<br>
+                    Make learning enjoyable.<br><br></p> 
+                <span class = "font-bold daysTime">Bacthes: 4PM, 7PM (5yr - 7yr) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Class duration: 1 hour<br>
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;5PM, 8PM (8yr - 16yr)<br>
+                Sessions: 3 Days per week&nbsp;&nbsp;&nbsp;</span> 
+                <div class="button"><a href = "https://wa.me/message/NNZ2S7HFCVO2J1" target = "_blank" class = "messageBtn">
+                    <i class="fa-brands fa-whatsapp"></i> Message us
+                   </a> </div>
+                
+            </div>
+    </div>
+</div>
+</div>
+
+
+<div class="WhatToLearn">
+
+    <div class="WhatToLearnText">
+            <div class="mt-4">
+                <h2 class="text-lg font-bold learnHeader">What You'll Learn</h2>
+                <div class="grid grid-cols-12 gap-4 mt-2">
+                    
+                    <div class="col-span-12">
+                        <p class="mb-4"><span class="font-bold">Grammar:</span> <br>
+                           Nouns, Pronouns, Adjectives, Verbs, Adverbs, Prepositions, Articles<br>
+
+                            Simple sentence structure.<br>
+                            Basic tenses.<br>
+                        </p>
+                        <p class="mb-4"><span class="font-bold">Speaking & Listening:</span><br>
+                            Vocabulary expansion.<br>
+                            Pronunciation practice.<br>
+                            Active listening.<br>
+                            Conversational skills.</p>
+                        <p class="mb-4"><span class="font-bold">Writing:</span> <br>
+                            Sentence construction.<br>
+                            Basic paragraph writing.<br>
+                            Simple story writing.<br>
+                            Picture Encoding (writing sentences describing pictures).</p>
+                        <p class="mb-4"><span class="font-bold">Reading:</span> <br>
+                            Comprehension of basic texts.<br>
+                            Vocabulary from reading.<br>
+                        </p>
+                        <p class="mb-4"><span class="font-bold">Communication & Confidence:</span> <br>
+                            Speaking in groups.<br>
+                            Expressing ideas clearly.<br>
+                            Basic social communication.<br>
+                            Fun Activities (games, songs, interactive exercises).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="WhatToLearnImgContainer">
+
+                <img class = "SecondImages" src="4u_academy_websitePic2.png" alt="Corporate employee getting a salary raise">
+                <img class = "SecondImages" src="4u_academy_websitePic3.png" alt="Confident Public Speaker">
+
+        </div>
+    </div>
+
+
+        <div class="text-white p-6 mt-0 courseBenefits">
+
+            <div class="benefits">
+                <h2 class="text-lg font-bold courseBHeader">Course Benefits<br></h2>
+                <ul class="mt-2 space-y-2">
+                    <li><br>Interactive online classes with live sessions</li>
+                    <li>Opportunity to make new friends</li>
+                    <li>3 weekly sessions for flexible learning</li>
+                    <li>Hands-on exercises and real-world case studies</li>
+                </ul>
+            </div>
+            <div class="socialLinks">
+                <a class="links" id="facebook" href = "https://www.facebook.com/profile.php?id=61571197801074" target = "_blank"><i class="fa-brands fa-facebook"></i> 4u Academy</a>
+                <a class="links" id="instagram" href = "https://www.instagram.com/4u_academy_official/" target = "_blank"><i class="fa-brands fa-instagram"></i>
+                    4u_Academy_official    </a>
+
+                    <div class="button2"><a href = "https://wa.me/message/NNZ2S7HFCVO2J1" target = "_blank" class = "messageBtn">
+                        <i class="fa-brands fa-whatsapp"></i> Message us
+                       </a> </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.enroll-Btn').forEach(element => element.addEventListener('click', function() {
+    document.getElementById('popup').style.display = 'flex'; // Show the popup
+  }));
+
+    // Close the popup when the button is clicked
+    document.getElementById('closeBtn').addEventListener('click', function() {
+        document.getElementById('popup').style.display = 'none';
+      });
+    </script>
+</body>
+</html>
