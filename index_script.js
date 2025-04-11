@@ -50,6 +50,10 @@ document.querySelector("#detail1").addEventListener("click", () =>{
     window.location.href = "CorporateCommunication.html";
 });
 
+document.querySelector("#detail2").addEventListener("click", () =>{
+    window.location.href = "AdultBatch.html";
+});
+
 document.querySelector("#detail3").addEventListener("click", () =>{
     window.location.href = "KidsBatch.html";
 });
