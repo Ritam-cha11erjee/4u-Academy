@@ -16,24 +16,23 @@
 
  </head>
  <body>
-  <header>
-   <img alt="4u Academy Logo" height="40" src="logo.png" width="40"/>
+  <header id="navbar">
+    <img alt="4u Academy Logo" height="40" src="logo.png" width="40"/>
+  
+    <button id="menu-toggle" aria-label="Toggle Menu">
+      &#9776;
+    </button>
 
-   <nav>
-    <a href="#">
-     Home
-    </a>
-    <a href="#programs-id">
-     Programs
-    </a>
-    <a href = "https://wa.me/message/NNZ2S7HFCVO2J1" target = "_blank">
-     Contact
-    </a>
-   </nav>
-   <a class="enroll-btn" href="#">
-    Enroll Now
-   </a>
+    <nav id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#programs-id">Programs</a>
+      <a href="AboutUs.html">About Us</a>
+      <a href="https://wa.me/message/NNZ2S7HFCVO2J1" target="_blank">Contact</a>
+    </nav>
+  
+    <button class="enroll-btn" style="cursor: pointer;">Enroll Now</button>
   </header>
+  
   <img alt="4u Academy Logo" src="4uAcademyArt.png" id = "backgroundArt" alt="4u Academy public speaking courses for kids and adults"/>
 
   <div class="sectionContainer">
@@ -69,39 +68,42 @@
   </section>
 </div>
   <section class="features">
-   <div>
-    <i class="fas fa-chalkboard-teacher">
-    </i>
-    <p class = "subSubHeading">
-     Expert Instructors
-    </p>
-    <p>
-     Trained professionals
-    </p>
-   </div>
-   <div>
-    <i class="fas fa-users">
-    </i>
-    <p class = "subSubHeading">
-     Small Groups
-    </p>
-    <p>
-     Personalized attention
-    </p>
-   </div>
-   <div>
-    <i class="fas fa-award">
-    </i>
-    <p class = "subSubHeading">
-     Proven Results
-    </p>
-    <p>
-     Build confidence
-    </p>
-   </div>
+    <!-- <div class="section"> -->
+      <div>
+        <i class="fas fa-chalkboard-teacher">
+        </i>
+        <p class = "subSubHeading">
+        Expert Instructors
+        </p>
+        <p>
+        Trained professionals
+        </p>
+      </div>
+      <div>
+        <i class="fas fa-users">
+        </i>
+        <p class = "subSubHeading">
+        Small Groups
+        </p>
+        <p>
+        Personalized attention
+        </p>
+      </div>
+      <div>
+        <i class="fas fa-award">
+        </i>
+        <p class = "subSubHeading">
+        Proven Results
+        </p>
+        <p>
+        Build confidence
+        </p>
+      </div>
+  <!-- </div> -->
   </section>
 
   <section id = "highlights-id" class="highlights">
+    <div class="section">
     <h2>
      Weekly Highlights
     </h2>
@@ -133,18 +135,22 @@
       </div>
 
     </div>
+  </div>
   </section>
 
   <section id = "programs-id" class="programs">
+    <div class="section">
    <h2>
     Our Programs
    </h2>
-   <p>
+   <p class = "programsSubTxt">
     Comprehensive courses designed for aspirational adults and students, focused on developing essential communication skills.
    </p>
    <div class="programs-list">
     
-    <div class="program">
+    <!-- <div class="program">
+      <img class = "programImage" src="4u_academy_websitePic13.png" alt="Image of adults">
+
       <div class="programTop">
       <h3>
       Corporate Communication Mastery
@@ -184,10 +190,12 @@
 
      <div class="viewDetails" id = "detail1">View Details</div>
 
-     </div>
+     </div> -->
 
     <div class="program">
-      <div class="programTop">
+      <img class = "programImage" src="4u_academy_websitePic12.png" alt="Image of adults">
+
+      <div class="programTop1">
 
      <h3>
       English Course For Adults
@@ -198,7 +206,7 @@
 
      <ul>
      <li>
-      Communication
+      Public Speaking
      </li>
      <li>
       Fluency
@@ -212,6 +220,19 @@
      </ul>
     </div>
 
+
+    <div class="grid3">
+      <div class="gridSubpart">Duration</div>
+      <div class="gridSubpart">Days/week</div>
+      <div class="gridSubpart">Price/month</div>
+     </div>
+
+     <div class="grid3" style="border-bottom: 1px solid rgb(53, 53, 53);">
+      <div class="gridSubpart2">3 months</div>
+      <div class="gridSubpart2">2</div>
+      <div class="gridSubpart2">₹1,999</div>
+     </div>
+
      
      <div class="grid3">
       <div class="gridSubpart">Duration</div>
@@ -221,8 +242,8 @@
 
      <div class="grid3">
       <div class="gridSubpart2">3 months</div>
-      <div class="gridSubpart2">2</div>
-      <div class="gridSubpart2">₹1,999</div>
+      <div class="gridSubpart2">4</div>
+      <div class="gridSubpart2">₹2,999</div>
      </div>
 
      <div class="viewDetails" id = "detail2">View Details</div>
@@ -232,6 +253,7 @@
 
 
     <div class="program">
+      <img class = "programImage" src="4u_academy_websitePic11.png" alt="Image of kids">
       <div class="programTop">
 
      <h3>
@@ -276,8 +298,176 @@
 
     </div>
    </div>
+  </div>
   </section>
+
+
+  <section class="py-16 md:py-24 bg-gray-50">
+    <div class="section-container grid lg:grid-cols-2 section">
+      
+      <!-- Text Column -->
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 animate-fade-in">Transformation Stories</h2>
+        <p class="text-gray-600 mb-8 animate-fade-in delay-200 transformationSubTxt">
+          At 4u Academy, we don't just teach communication—we transform lives. Our students consistently achieve remarkable growth in confidence and skill.
+        </p>
+        <ul class="space-y-4 animate-fade-in delay-400 transformationUl">
+          <li class="">
+            <span class="text-academy-blue text-xl mr-3">✔</span>
+            <span><strong class="font-semibold">90% of our students</strong> report significant improvement in confidence within just 3 months</span>
+          </li>
+          <!-- <li class="">
+            <span class="text-academy-blue text-xl mr-3">✔</span>
+            <span><strong class="font-semibold">85% of corporate clients</strong> see measurable improvement in team communication</span>
+          </li> -->
+          <li class="">
+            <span class="text-academy-blue text-xl mr-3">✔</span>
+            <span><strong class="font-semibold">100+ success stories</strong> from students who secured dream jobs through improved interview skills</span>
+          </li>
+        </ul>
+        <a href="https://wa.me/919147048173?text=Hello! I'd like to know more about the classes." class="btn-secondary mt-8 inline-block animate-fade-in delay-400">Start Your Journey →</a>
+      </div>
+  
+      <!-- Image Column -->
+      <div class="relative animate-fade-in delay-400">
+        <!-- Red block behind -->
+        <div class="absolute top-0 right-0 w-full h-full bg-academy-red rounded-br-3xl -z-10"></div>
+        
+        <!-- Image card -->
+        <div class="overflow-hidden rounded-tl-3xl rounded-br-3xl bg-academy-blue shadow-xl relative">
+          <img class = "transformationImg" src="4u_academy_websitePic10.png" alt="Confident kid in suit">
+        </div>
+      </div>
+  
+    </div>
+  </section>
+  
+
+  <section class="testimonials-section">
+    <div class="testimonial-container section">
+      <!-- Replace with actual testimonials or JavaScript carousel -->
+      <h2 class="testimonial-heading">What Our Students Say</h2>
+
+      <div class="carousel-wrapper">
+        <div class="carousel-track">
+          
+          <!-- Testimonial Card 1 -->
+          <div class="carousel-item">
+            <div class="testimonial-card">
+              <div class="testimonial-header">
+                <img src="Lithika.png" alt="Lithika's Mother" />
+                <div>
+                  <div class="testimonial-name">Mrs. Bose</div>
+                  <div class="testimonial-role">Parent of Lithika</div>
+                </div>
+              </div>
+              <div class="testimonial-stars">★★★★★</div>
+              <div class="testimonial-text">
+                Classes are excellent and speaking capacity is improving. Student friendly atmosphere helps to think and speak joyfully. Guidance of the instructor is very pleasant and clears away all anxiety and nervousness.
+              </div>
+            </div>
+          </div>
+    
+          <!-- Testimonial Card 2 -->
+          <div class="carousel-item">
+            <div class="testimonial-card">
+              <div class="testimonial-header">
+                <img src="Rangaraju.png" alt="Rangaraju" />
+                <div>
+                  <div class="testimonial-name">Mr. Rangaraju</div>
+                  <div class="testimonial-role">Parent of 2 kids</div>
+                </div>
+              </div>
+              <div class="testimonial-stars">★★★★★</div>
+              <div class="testimonial-text">
+                My son has improved a lot in English and speaking skills. The classes are very good.
+              </div>
+            </div>
+          </div>
+    
+          <!-- Testimonial Card 3 -->
+          <div class="carousel-item">
+            <div class="testimonial-card">
+              <div class="testimonial-header">
+                <img src="Danish.png" alt="Danish" />
+                <div>
+                  <div class="testimonial-name">Danish</div>
+                  <div class="testimonial-role">Student</div>
+                </div>
+              </div>
+              <div class="testimonial-stars">★★★★★</div>
+              <div class="testimonial-text">
+                It's a very good class. I understand everything, in every class there will be intresting topics for us. I love this class very much.
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Testimonial Card 4 -->
+          <div class="carousel-item">
+            <div class="testimonial-card">
+              <div class="testimonial-header">
+                <img src="Anushka.png" alt="Anushka" />
+                <div>
+                  <div class="testimonial-name">Anushka</div>
+                  <div class="testimonial-role">Student</div>
+                </div>
+              </div>
+              <div class="testimonial-stars">★★★★★</div>
+              <div class="testimonial-text">
+                I have learnt so many things here. Before joining 4u academy I didn't know how to speak in English but after joining i witnessed massive improvement in myself.
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Testimonial Card 5 -->
+          <div class="carousel-item">
+            <div class="testimonial-card">
+              <div class="testimonial-header">
+                <img src="Sapna.png" alt="Sapna" />
+                <div>
+                  <div class="testimonial-name">Sapna Ji</div>
+                  <div class="testimonial-role">Mother of Priyanshi</div>
+                </div>
+              </div>
+              <div class="testimonial-stars">★★★★★</div>
+              <div class="testimonial-text">
+                Your teaching style is engaging and interactive, which has made learning fun and enjoyable. I appreciate the way you encourage discussion and questions, creating a safe and open environment. Thank u ❤️ so much, Tamali ma'am.
+              </div>
+            </div>
+          </div>
+    
+
+          <!-- Testimonial Card 6 -->
+          <div class="carousel-item">
+            <div class="testimonial-card">
+              <div class="testimonial-header">
+                <img src="Vivek.png" alt="Vivek" />
+                <div>
+                  <div class="testimonial-name">Mr. Vivek</div>
+                  <div class="testimonial-role">Father of Vedant</div>
+                </div>
+              </div>
+              <div class="testimonial-stars">★★★★★</div>
+              <div class="testimonial-text">
+              Excellent! Now my son is improving his fluency.
+              </div>
+            </div>
+          </div>
+
+        </div>
+    
+        <!-- Carousel Buttons -->
+        <button class="carousel-button prev-btn">‹</button>
+        <button class="carousel-button next-btn">›</button>
+      </div>
+    </section>
+      
+
+
   <section class="why-choose-us">
+    <div class="section">
    <h2>
     Why Choose Us?
    </h2>
@@ -316,6 +506,19 @@
      </p>
     </div>
    </div>
+  </div>
+  </section>
+
+
+  <section class="cta-section">
+    <div class="cta-container section">
+      <h2 class="cta-heading fade-in">Ready to Speak Up and Succeed?</h2>
+      <p class="cta-text fade-in delay-200">
+        Join 4u Academy today and transform the way you communicate.
+        Book a free demo class and experience the difference yourself.
+      </p>
+      <a href="https://wa.me/919147048173?text=Hello! I'd like to know more about the classes." class="cta-button fade-in delay-400">Join a Free Demo Class</a>
+    </div>
   </section>
 
 
@@ -331,6 +534,51 @@
       </iframe>
     </div>
   </div>
+
+
+  <!-- Footer -->
+  <footer class="page-footer">
+    <div class="footer-container">
+      <div class="footer-column brand-column">
+        <img class = "logo" src="logo.png" alt="">
+        <p class = "socialText">Empowering Voices. <br>Building Confidence. <br>Inspiring Success. <br><br></p>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/profile.php?id=61571197801074" class = "brands"><i class="fa-brands fa-square-facebook" style="scale: 1.5;"></i></a>
+          <a href="https://www.instagram.com/4u_academy_official/" class = "brands"><i class="fa-brands fa-square-instagram" style="scale: 1.5;"></i></a>
+          <a href="https://www.linkedin.com/company/106947931/admin/dashboard/" class = "brands"><i class="fa-brands fa-linkedin" style="scale: 1.5;"></i></a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Programs</a></li>
+          <li><a href="#">Success Stories</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Join as a Demo</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Our Programs</h4>
+        <ul>
+          <li>For Kids (Ages 6-16)</li>
+          <li>For Adults</li>
+          <li>Corporate Communication</li>
+          <li>Book a Demo Class</li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Contact Us</h4>
+        <ul>
+          <li><a target = "_blank" href="mailto:4u.academy2025@gmail.com">4u.academy2025@gmail.com</a></li>
+          <li>+91 9147048173</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 4u Academy. All rights reserved.</p>
+    </div>
+  </footer>
 
 
   <script src="index_script.js"></script>

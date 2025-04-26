@@ -3,12 +3,12 @@
 
     <link rel="icon" type="image/png" href="favicon.png">
     <title>
-      4u Academy | Corporate Communication Mastery
+      4u Academy | English Communication - Adults
     </title>
 
     <script src="https://cdn.tailwindcss.com"></script>
   <meta name="viewport" content="width=device-width,  initial-scale=1.0">
-  <meta name="description" content="Master Corporate Communication by learning essential Public Speaking, Leadership, Conflict Resolution, Persuasion, Negotiation, Assertiveness and Interview skills!">
+  <meta name="description" content="Master English Communication by learning Public Speaking, Fluency, Grammar & Personality development!">
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
@@ -23,6 +23,92 @@
 
 
     <style>
+
+
+.section {
+  margin-bottom: 3rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.5s ease;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ====== Base Navbar Style ====== */
+header {
+  background-color: black;
+  padding: 1% 2%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  transition: all 0.3s ease;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+}
+
+header.scrolled {
+  background-color: #000000f8;
+  padding: 0.5% 2%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  transform: translateY(-1px);
+}
+
+header img {
+  height: 100%;
+}
+
+/* ====== Nav Links ====== */
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.5vw;
+  padding-bottom: 2%;
+  border-bottom: 3px solid rgba(255, 0, 0, 0);
+  transition: border-bottom 0.5s ease, color 0.5s ease;
+}
+
+nav a:hover {
+  color: rgb(255, 0, 0);
+  padding-bottom: 2%;
+  border-bottom: 3px solid red;
+  transition: border-bottom 0.3s;
+}
+
+nav a:active {
+  color: rgb(104, 0, 0);
+}
+
+
+
+/* ====== Enroll Button ====== */
+.enroll-btn {
+  background-color: #c00;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-right: 3%;
+}
+
+/* ====== Hamburger Toggle Button (mobile only) ====== */
+#menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+}
 
 @media (min-width: 769px) {
 
@@ -43,56 +129,6 @@
 
         }
 
-        header {
-             background-color: #000000ef;
-             padding: 1% 2%;
-             display: flex;
-             justify-content: space-between;
-             align-items: center;
-             height: 5vw;
-         }
-         header img {
-             height: 100%;
-         }
-         header nav a {
-             margin: 0 5%;
-             text-decoration: none;
-             color: #ffffff;
-             font-weight: 500;
-             font-size: 1.5vw;
-             border: 0px;
-
-         }
-         header nav a:hover{
-            color: rgb(255, 0, 0);
-            transition: color 0.3s;
-            padding-bottom: 2%;
-            border-bottom: 3px solid red;
-            transition: border-bottom 0.1s;
-         }
-         header nav a:active{
-            color: rgb(104, 0, 0);
-            /* transition: color 0.3s; */
-         }
-         header nav{
-             width: 50%;
-             text-align: center;
-             align-items: center;
-             justify-content: center;
-             display: block;
-             margin: auto;
-             margin-left: 23.5%;
- 
-         }
-         header .enroll-btn {
-             background-color: #c00;
-             color: #fff;
-             padding: 0.6% 1.5%;
-             border-radius: 5px;
-             text-decoration: none;
-             font-size: 70%;
-         }
-
         .icon {
             width: 40px;
             height: 40px;
@@ -103,6 +139,8 @@
             grid-template-columns: repeat(2, 1fr);
             grid-template-columns: 40% 60%;
             /* background-color: blue; */
+            padding-top: 8vw;
+
         }
         .columnPics{
             /* background-color: yellow; */
@@ -120,6 +158,7 @@
         .textContainer{
             padding-left: 3%;
             padding-right: 2%;
+            font-size: 80%;
         }
 
         .WhatToLearn{
@@ -187,7 +226,7 @@
         }
 
         .button{
-            margin-left: 10%;
+            margin-left: 30%;
             display: inline-block;
             background-color: #c00;
              color: white;
@@ -366,41 +405,46 @@ h1{
 
 }
 
-header {
-         flex-direction: row;
-         /* text-align: center; */
-         padding: 10px;
-         background-color: black;
+nav {
+          display: none;
+          flex-direction: row;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          background-color: #000000ef;
+          padding: 10px 20px;
+          width: 92vw;
+          text-align: center;
+          margin: auto;
+          /* align-items: center;
+          justify-content: center; */
+          margin-top: -1%;
+        }
 
-     }
- 
-     header nav {
-         width: 50%;
-         display: inline;
-         position: absolute;
-         top: 2.5%;
-         margin-left: 18%;
-         font-size: 80%;
-         color: white;
-         text-decoration: none;
-     }
- 
-     header nav a {
-         /* display: in; */
-         margin: 0% 3%;
-         color: white;
-     }
-     header .enroll-btn {
-         /* display: block; */
-         /* margin: 10px auto; */
-         padding: 8px 16px;
-         position: absolute;
-         top: 1%;
-         right: 2%;
-         background-color: #c00;
-         color: white;
-         text-decoration: none;
-     }
+        #nav-links{
+          align-items: center;
+          justify-content: center;
+        }
+      
+        nav a{
+          font-size: 120%;
+      
+        }
+      
+        nav.open {
+          display: flex;
+
+        }
+      
+        #menu-toggle {
+          display: block;
+          padding-right: 2%;
+          margin-right: 3%;
+        }
+      
+        .enroll-btn {
+          display: none;
+        }
 
 .icon {
     width: 40px;
@@ -412,6 +456,8 @@ header {
     grid-template-columns: repeat(2, 1fr);
     grid-template-columns: 40% 60%; */
     /* background-color: blue; */
+    padding-top: 8vw;
+
 }
 .columnPics{
     /* background-color: yellow; */
@@ -653,24 +699,23 @@ border-radius: 8px;
 </head>
 <body class="font-roboto">
 
-    <header>
+    <header id="navbar">
         <img alt="4u Academy Logo" height="40" src="logo.png" width="40"/>
-     
-        <nav>
-         <a href="index.html">
-          Home
-         </a>
-         <a href="index.html#programs-id">
-          Programs
-         </a>
-         <a href = "https://wa.me/message/NNZ2S7HFCVO2J1" target = "_blank">
-          Contact
-         </a>
+      
+        <button id="menu-toggle" aria-label="Toggle Menu">
+          &#9776;
+        </button>
+    
+        <nav id="nav-links">
+          <a href="index.html">Home</a>
+          <a href="index.html#programs-id">Programs</a>
+          <a href="AboutUs.html">About Us</a>
+          <a href="https://wa.me/message/NNZ2S7HFCVO2J1" target="_blank">Contact</a>
         </nav>
-        <a class="enroll-btn" href="#">
-         Enroll Now
-        </a>
-       </header>
+      
+        <button class="enroll-btn" style="cursor: pointer;">Enroll Now</button>
+
+      </header>
 
          <!-- Popup Modal -->
   <div id="popup" class="popup-overlay">
@@ -694,12 +739,14 @@ border-radius: 8px;
 
         <div class="bg-white p-6">
             <h1 class=" font-bold">English Communication - Adults<br></h1>
-            <h2 class="text-lg font-bold">3-Month Online Course - ₹1,999/month<br><br></h2>
+            <h2 class="text-lg font-bold">3-Month Online Course<br><br></h2>
             <div class="mt-4">
                 <h2 class="text-lg font-bold">Course Overview</h2>
                 <p class="mt-2">
                     This course is designed to help you master spoken English, grammar, fluency, vocabulary, and personality development. Whether you're a professional, student, or aspiring speaker, you'll gain the skills to express yourself confidently in any situation.</p> <br>
-                <span class = "font-bold daysTime">Days: Monday & Tuesday<br>
+                <span class = "font-bold daysTime">Days: Monday, Tuesday, Friday & Saturday<br>
+                    2 days / week: ₹1,999 / month<br>
+                    4 days / week: ₹2,999 / month<br>
                     Timing: 9PM - 10PM
                 <div class="button"><a href = "https://wa.me/message/NNZ2S7HFCVO2J1" target = "_blank" class = "messageBtn">
                     <i class="fa-brands fa-whatsapp"></i> Message us
@@ -769,7 +816,7 @@ border-radius: 8px;
                 <ul class="mt-2 space-y-2">
                     <li><br>Interactive online classes with live sessions</li>
                     <li>Real-life scenarios & role plays for practice</li>
-                    <li>2 weekly sessions for flexible learning</li>
+                    <li>2 or 4 weekly sessions for flexible learning</li>
                     <li>Certificate upon course completion</li>
                 </ul>
             </div>
@@ -785,6 +832,28 @@ border-radius: 8px;
         </div>
     </div>
     <script>
+
+ // ===== Scroll Navbar =====
+ const navbar = document.querySelector('header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+
+  // ===== Mobile Navbar Toggle =====
+  const menuToggle = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
+
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
+  }
+
+
         document.querySelectorAll('.enroll-Btn').forEach(element => element.addEventListener('click', function() {
     document.getElementById('popup').style.display = 'flex'; // Show the popup
   }));
