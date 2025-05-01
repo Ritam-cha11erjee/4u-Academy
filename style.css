@@ -1852,7 +1852,7 @@ nav a:active {
     gap: 1.5rem;
     transition: transform 0.5s ease-in-out;
     will-change: transform;
-    height: 150%;
+    height: 170%;
   }
   
   /* === Carousel Items === */
@@ -1872,6 +1872,7 @@ nav a:active {
     /* max-width: 100%; */
     text-align: center;
     width: 80%;
+    aspect-ratio: 5/9;
   }
   
   .testimonial-header {
