@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   document.querySelector("#detail2")?.addEventListener("click", () => {
-    window.location.href = "AdultBatch.html";
+    window.location.href = "AdultBatch_July.html";
   });
 
   document.querySelector("#detail3")?.addEventListener("click", () => {
