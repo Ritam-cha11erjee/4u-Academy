@@ -1,0 +1,782 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Master Your Voice — Adult Public Speaking Workshop</title>
+
+  <!-- Google Fonts: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <meta name="description" content="High-end adult public speaking workshop — practical, concise, and career-focused. Register now." />
+
+  <style>
+    /* =========================
+       Design tokens / variables
+       ========================= */
+    :root{
+      --primary: #c00;                /* Rich red */
+      --accent: #2D2D2D;              /* Dark charcoal */
+      --bg: #F2F2F2;                  /* Soft gray background */
+      --card-bg: #ffffff;
+      --muted: #6b6b6b;
+      --radius: 14px;
+      --max-width: 980px;
+      --gutter: 24px;
+      --shadow-soft: 0 8px 24px rgba(45,45,45,0.08);
+      --shadow-subtle: 0 6px 18px rgba(0,0,0,0.06);
+      --glass: rgba(255,255,255,0.6);
+      font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    /* =========================
+       Reset & base
+       ========================= */
+    * { box-sizing: border-box; }
+    html,body { height: 100%; }
+    body{
+      margin: 0;
+      background: var(--bg);
+      color: var(--accent);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height: 1.45;
+      font-size: 16px;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    /* =========================
+       Page shell / container
+       ========================= */
+    .page {
+      width: 100%;
+      max-width: var(--max-width);
+      background: linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,0.98));
+      border-radius: 18px;
+      padding: 48px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    /* Keep things single-column and airy */
+    .section {
+      margin-bottom: 40px;
+      padding-bottom: 6px;
+    }
+
+    h1,h2,h3 { margin: 0 0 12px 0; color: var(--accent); }
+    p { margin: 0 0 12px 0; color: #333; }
+
+    /* =========================
+       Hero
+       ========================= */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display:inline-block;
+      font-weight:600;
+      color: var(--primary);
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      font-size: 12px;
+      background: rgba(204,0,0,0.06);
+      padding: 6px 10px;
+      border-radius: 8px;
+      width: fit-content;
+    }
+
+    .headline {
+      font-size: clamp(28px, 4.8vw, 44px); /* large and responsive */
+      line-height: 1.03;
+      font-weight: 800;
+      color: var(--accent);
+      letter-spacing: -0.5px;
+    }
+
+    .subhead {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 70ch;
+    }
+
+    .hero-cta-wrap {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      margin-top: 8px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: none;
+      cursor: pointer;
+      border-radius: 12px;
+      padding: 14px 20px;
+      font-weight: 600;
+      font-size: 16px;
+      transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease;
+      box-shadow: var(--shadow-subtle);
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      min-width: 170px;
+      transform-origin: center;
+    }
+
+    .btn-primary:focus { outline: 3px solid rgba(204,0,0,0.14); outline-offset: 3px; }
+
+    /* subtle hover for primary: slight scale-up + darker shade */
+    .btn-primary:hover{
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 12px 30px rgba(192,0,0,0.16);
+      background: color-mix(in srgb, var(--primary) 85%, black 15%);
+    }
+
+    .btn-ghost{
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid rgba(45,45,45,0.08);
+      padding: 12px 16px;
+      border-radius: 10px;
+    }
+
+    /* Hero visual card on the right for large screens (subtle) */
+    .hero-visual {
+      display: none; /* shown on wider screens */
+      background: linear-gradient(135deg, rgba(255,0,0,0.06), rgba(45,45,45,0.02));
+      border-radius: 14px;
+      padding: 18px;
+      justify-self: end;
+      box-shadow: var(--shadow-subtle);
+      min-width: 240px;
+      text-align: center;
+    }
+
+    .hero-visual .price {
+      font-weight: 800;
+      color: var(--primary);
+      font-size: 20px;
+    }
+
+    /* =========================
+       Benefits
+       ========================= */
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow-subtle);
+    }
+
+    .benefits-grid {
+      display: grid;
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .benefit {
+      display:flex;
+      gap: 14px;
+      align-items:flex-start;
+    }
+
+    .benefit-icon {
+      min-width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      background: linear-gradient(180deg, rgba(204,0,0,0.08), rgba(45,45,45,0.02));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      color:var(--primary);
+      flex-shrink: 0;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.04);
+    }
+
+    .benefit-title {
+      font-weight:700;
+      color:var(--accent);
+      font-size:15px;
+    }
+
+    .benefit-desc {
+      color: var(--muted);
+      font-size:14px;
+    }
+
+    /* =========================
+       Instructor
+       ========================= */
+    .instructor {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+    }
+
+    /* Stack photo above bio on smaller screens */
+@media (max-width: 768px) {
+  .instructor {
+    flex-direction: column;   /* switch from row to column */
+    text-align: center;       /* center text for better readability */
+  }
+
+  .instructor img {
+    /* margin-bottom: 1rem;      add space below the image */
+  }
+}
+
+    .instructor-photo {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink:0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.04), rgba(255,255,255,0.02));
+      border: 4px solid rgba(45,45,45,0.04);
+      box-shadow: 0 10px 30px rgba(45,45,45,0.06);
+      display:grid;
+      place-items:center;
+    }
+
+    .instructor-photo svg{
+      width: 86px;
+      height: 86px;
+      opacity: 0.6;
+    }
+
+    .bio {
+      max-width: 64ch;
+    }
+
+    .bio h3 { font-size: 18px; margin-bottom: 4px; }
+
+    /* =========================
+       Final CTA
+       ========================= */
+    .final-cta {
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      align-items:center;
+      justify-content:center;
+      padding: 26px;
+      background: linear-gradient(90deg, rgba(204,0,0,0.06), rgba(45,45,45,0.02));
+      border-radius: 12px;
+      text-align:center;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .final-cta h2 {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .small {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* =========================
+       Footer small
+       ========================= */
+    .foot {
+      display:flex;
+      justify-content:space-between;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 6px;
+      align-items:center;
+    }
+
+    /* =========================
+       Modal (register form)
+       ========================= */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      padding: 24px;
+    }
+
+    .modal {
+      width: 100%;
+      max-width: 540px;
+      background: white;
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.32);
+    }
+
+    .form-row { display:flex; gap: 12px; flex-direction: column; margin-bottom: 12px; }
+    .label { font-size: 13px; color: var(--muted); margin-bottom:6px; }
+    input[type="text"], input[type="email"], textarea {
+      font-family: inherit;
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 1px solid #e6e6e6;
+      box-shadow: inset 0 1px 0 rgba(0,0,0,0.02);
+      font-size: 14px;
+      width: 100%;
+    }
+
+    .modal-close {
+      background: transparent;
+      border: none;
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--muted);
+      cursor: pointer;
+      position: absolute;
+      right: 18px;
+      top: 18px;
+    }
+
+    /* =========================
+       Responsive layout adjustments
+       ========================= */
+    @media (min-width:880px) {
+      .hero {
+        grid-template-columns: 1fr 320px;
+        gap: 28px;
+      }
+
+      .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .instructor { gap: 28px; }
+      body { padding: 48px; }
+    }
+
+    @media (min-width:1200px) {
+      .page { padding: 64px; }
+      .benefits-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* Mobile-friendly spacing & readable text scaling */
+    @media (max-width:420px) {
+      .page { padding: 20px; border-radius: 12px; }
+      .instructor-photo { width:88px; height:88px; }
+      .headline { font-size: 28px; }
+    }
+
+    /* Simple focus states for accessibility */
+    a:focus, button:focus, input:focus, textarea:focus {
+      outline: 3px solid rgba(45,45,45,0.06);
+      outline-offset: 2px;
+    }
+
+        /* Container for the whole section */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            margin-bottom: 50px;
+        }
+
+        /* Styling for each testimonial slide */
+        .testimonial-carousel .slick-list,
+        .testimonial-carousel .slick-track {
+            display: flex;
+            align-items: center;
+        }
+
+        .testimonial-slide {
+            padding: 24px;
+            text-align: center;
+            background-color: white;
+            border-radius: 8px;
+            /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+            min-height: 290px; /* Added for a consistent height */
+            display: flex !important;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .testimonial-text {
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 16px;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        /* Final fix for button appearance after click and hover */
+    .slick-prev, .slick-next {
+        font-size: 0;
+        line-height: 0;
+        position: absolute;
+        top: 50%;
+        display: block;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        transform: translate(0, -50%);
+        cursor: pointer;
+        color: transparent;
+        border: none;
+        outline: none;
+        background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+        border-radius: 50%;
+        z-index: 10;
+        opacity: 1 !important; /* Forces visibility */
+        transition: background-color 0.3s ease;
+    }
+
+    /* Fix for position on desktop */
+    .slick-prev { left: -50px; }
+    .slick-next { right: -50px; }
+    
+    /* Position on mobile */
+    @media (max-width: 768px) {
+        .slick-prev { left: -15px; }
+        .slick-next { right: -15px; }
+
+      .foot {
+      display:block;
+      justify-content:space-between;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 6px;
+      align-items:center;
+    }
+
+    .foot div{
+      margin-bottom: 8px;
+    }
+    }
+
+    /* Hover and active states */
+    .slick-prev:hover, .slick-next:hover,
+    .slick-prev:active, .slick-next:active,
+    .slick-prev:focus, .slick-next:focus {
+        background: var(--primary); /* Red color on hover, click, and focus */
+    }
+
+    /* Arrow icon styling */
+    .slick-prev:before, .slick-next:before {
+        font-family: 'slick';
+        font-size: 24px;
+        line-height: 1;
+        opacity: 1;
+        color: white; /* White icon color */
+    }
+    .slick-prev:before { content: '←'; }
+    .slick-next:before { content: '→'; }
+
+    /* Customizing Slick's dots */
+    .slick-dots li button:before {
+        color: var(--primary);
+    }
+    </style>
+</head>
+<body>
+  <main class="page" id="main-content">
+
+    <!-- HERO SECTION -->
+    <section class="section hero" aria-labelledby="hero-heading">
+      <div>
+        <span class="eyebrow" aria-hidden="true" style = "margin-bottom: 5%;">Limited Seats • Live Workshop</span>
+
+        <!-- Main Headline -->
+        <h1 id="hero-heading" class="headline" role="heading" aria-level="1">
+          From Shy to Confident: Find Your Voice<br> & Be Heard
+        </h1>
+
+        <!-- Sub-headline -->
+        <p class="subhead">
+          A friendly workshop for anyone who's ever felt their great ideas were stuck inside because they were too nervous to speak up.
+        </p>
+
+        <!-- CTA -->
+        <div class="hero-cta-wrap" role="group" aria-label="Primary actions">
+          <button class="btn btn-primary" id="openRegister" data-cta="hero" onclick = "reserve()">
+            <!-- subtle icon (microphone) inline SVG -->
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+              <path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M19 11v1a7 7 0 0 1-14 0v-1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M12 21v-3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            Register Now
+          </button>
+
+          <a class="btn btn-ghost" href="#benefits" role="button">What You'll Achieve</a>
+        </div>
+
+        <!-- small details -->
+        <div class="foot" style="margin-top:18px;">
+          <div>Next workshop: <strong>Oct 12, 2025</strong></div>
+          <div style="display:flex; gap:50px; align-items:center;">
+            <span class="small">Time: <strong>12PM - 1:30PM</strong></span>
+            <span class="small">Duration: <strong>1.5 hours</strong></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFITS SECTION -->
+    <section class="section card" id="benefits" aria-labelledby="benefits-heading">
+      <h2 id="benefits-heading">What You'll Achieve</h2>
+      <p class="small">Designed for you — practical tools you can apply from day one.</p>
+
+      <div class="benefits-grid" style="margin-top:18px;">
+        <!-- Benefit 1 -->
+        <div class="benefit">
+          <div class="benefit-icon" aria-hidden="true">
+            <!-- simple icon: confidence (shield + tick) -->
+            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" d="M8 5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H8Zm7 0a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1Z" clip-rule="evenodd"/>
+          </svg>
+
+          </div>
+          <div>
+            <div class="benefit-title">No More Awkward Pauses</div>
+            <div class="benefit-desc">Speak smoothly, find your words, and own your space, even in a crowded room.</div>
+          </div>
+        </div>
+
+        <!-- Benefit 2 -->
+        <div class="benefit">
+          <div class="benefit-icon" aria-hidden="true">
+            <!-- icon: structure (list) -->
+            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+            <path d="m12.75 20.66 6.184-7.098c2.677-2.884 2.559-6.506.754-8.705-.898-1.095-2.206-1.816-3.72-1.855-1.293-.034-2.652.43-3.963 1.442-1.315-1.012-2.678-1.476-3.973-1.442-1.515.04-2.825.76-3.724 1.855-1.806 2.201-1.915 5.823.772 8.706l6.183 7.097c.19.216.46.34.743.34a.985.985 0 0 0 .743-.34Z"/>
+          </svg>
+
+          </div>
+          <div>
+            <div class="benefit-title">Speak from the Heart</div>
+            <div class="benefit-desc">Organize your thoughts into a clear, simple message that's impossible to ignore.</div>
+          </div>
+        </div>
+
+        <!-- Benefit 3 -->
+        <div class="benefit">
+          <div class="benefit-icon" aria-hidden="true">
+            <!-- icon: audience (people) -->
+            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm13.707-1.293a1 1 0 0 0-1.414-1.414L11 12.586l-1.793-1.793a1 1 0 0 0-1.414 1.414l2.5 2.5a1 1 0 0 0 1.414 0l4-4Z" clip-rule="evenodd"/>
+          </svg>
+
+          </div>
+          <div>
+            <div class="benefit-title">Overcome the Fear</div>
+            <div class="benefit-desc">Get personalized, zero-judgment feedback to help you beat your stage fright for good.</div>
+          </div>
+        </div>
+
+        <!-- Benefit 4 -->
+        <div class="benefit">
+          <div class="benefit-icon" aria-hidden="true">
+            <!-- icon: adaptability (spark) -->
+            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+              <path fill-rule="evenodd" d="M5 8a1 1 0 0 1 1 1v3a4.006 4.006 0 0 0 4 4h4a4.006 4.006 0 0 0 4-4V9a1 1 0 1 1 2 0v3.001A6.006 6.006 0 0 1 14.001 18H13v2h2a1 1 0 1 1 0 2H9a1 1 0 1 1 0-2h2v-2H9.999A6.006 6.006 0 0 1 4 12.001V9a1 1 0 0 1 1-1Z" clip-rule="evenodd"/>
+              <path d="M7 6a4 4 0 0 1 4-4h2a4 4 0 0 1 4 4v5a4 4 0 0 1-4 4h-2a4 4 0 0 1-4-4V6Z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="benefit-title">Real-World Confidence</div>
+            <div class="benefit-desc">Master panel discussions and handle Q&A sessions with poise and authority.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INSTRUCTOR SECTION -->
+    <section class="section" aria-labelledby="instructor-heading">
+      <div class="card">
+        <h2 id="instructor-heading">Meet the Instructor</h2>
+        <div class="instructor" style="margin-top:14px;">
+          <div class="instructor-photo" aria-hidden="true">
+            <img src="4u_academy_Ritam_pfp.png" alt="Trainer's picture" style="width:100%; height:100%; object-fit:cover; object-position:top;" />
+          </div>
+
+          <div class="bio">
+            <h3>Ritam Chatterjee — Lead Trainer</h3>
+            <p style="color:var(--muted);">
+              I'm Ritam. I've always been passionate about communication, a journey that led me to specialize in Corporate Communication from the <strong>University of California, Irvine. </strong>I'm here to help people just like you unlock their confidence and find their voice.
+            </p>
+
+            <p style="margin-top:8px;">
+              <strong style="color:var(--primary);">My goal: </strong>To turn communication from a challenge into your biggest asset.
+            </p>
+
+            <div style="margin-top:10px;">
+              <button class="btn btn-primary" id="openRegister2" data-cta="instructor" onclick = "reserve()">Reserve Your Seat</button>
+              <a class="btn btn-ghost" href="#benefits" style="margin-left:8px;">View Curriculum</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+        <section class="container">
+            <h2>What our students say:</h2>
+            <div class="testimonial-carousel">
+                <div class="testimonial-slide">
+                    <p class="testimonial-text">
+                    <h2>Amit Mishra</h2>
+                    "4u Academy really helped a lot to boost my confidence in speaking English. It's awesome how the faculty takes special care to groom our skills and gives us more opportunities to speak."
+                    </p>
+                </div>
+
+                <div class="testimonial-slide">
+                    <p class="testimonial-text">
+                    <h2>Kiruthika</h2>
+                    "Hi, this is Kiruthika. It was really nice meeting you all. I learned a lot of new things in English, and it was very useful. The tutor was very friendly and explained everything in simple, easy ways. They also gave us a lot of practice. Thank you for your guidance!"
+                    </p>
+                </div>
+
+                <div class="testimonial-slide">
+                    <p class="testimonial-text">
+                        <h2>Kashika</h2>
+                        "Before I joined 4u Academy, I had public speaking fear and I had grammar issues but now I'm fluent in English."
+                    </p>
+                </div>
+
+                <div class="testimonial-slide">
+                    <p class="testimonial-text">
+                        <h2>Anushka Mishra</h2>
+                        "I have learned so many things here. Before joining 4u Academy, I didn't know how to speak in English, but after joining, I saw so much improvement in myself."
+                    </p>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="section">
+      <div class="final-cta">
+        <h2>Ready to find your voice? Let's take the first step together.</h2>
+        <p class="small">Join our next cohort and leave with a clear, confident speaking style you can rely on.</p>
+        <div style="display:flex; gap:12px; align-items:center; justify-content:center; flex-wrap:wrap;">
+          <button class="btn btn-primary" id="openRegister3" data-cta="final" onclick = "reserve()">Register Now</button>
+          <a class="btn btn-ghost" href="#main-content">Ask a question</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer tiny -->
+    <footer style="margin-top:18px; text-align:center; color:var(--muted); font-size:13px;">
+      <div>© <span id="year"></span> All Rights Reserved</div>
+    </footer>
+  </main>
+
+  </div>
+
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.testimonial-carousel').slick({
+                arrows: true,
+                dots: true,
+                infinite: true,
+                speed: 500,
+                slidesToShow: 1,
+                adaptiveHeight: false,
+                autoplay: false,
+                autoplaySpeed: 4000
+            });
+        });
+    </script>
+
+  <!-- =========================
+       Embedded JS (small, production-ready)
+       ========================= -->
+  <script>
+    // Update copyright year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+
+    // Simple form validation + fake submit (placeholder for real submission endpoint)
+    const form = document.getElementById('registerForm');
+    const statusEl = document.getElementById('formStatus');
+
+    function reserve(){
+       window.open("https://docs.google.com/forms/d/e/1FAIpQLSeHAGu6Hm1iSL0fwp1holad493mq0aCePmcClHi6uuNE0m11Q/viewform?usp=dialog", '_blank');
+    }
+
+    form.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+
+      // Minimal client-side validation
+      if (!name || !email) {
+        statusEl.style.display = 'block';
+        statusEl.style.color = 'crimson';
+        statusEl.textContent = 'Please enter your name and a valid email.';
+        return;
+      }
+
+      // simulate submission (replace with real fetch to your backend)
+      statusEl.style.display = 'block';
+      statusEl.style.color = 'var(--muted)';
+      statusEl.textContent = 'Reserving your seat...';
+
+      // emulate a network call (you would replace this code)
+      setTimeout(() => {
+        statusEl.style.color = 'green';
+        statusEl.textContent = '✅ Registration received! Check your email for confirmation.';
+        // Optionally close modal after a short pause
+        setTimeout(() => {
+          closeModal();
+          // show a small toast or change CTA state if desired
+          // For now, log to console for developer
+          console.info('Registered:', { name, email, source: form.dataset.source || 'unknown' });
+        }, 1100);
+      }, 900);
+    });
+
+    // Accessibility: close modal with Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.style.display === 'flex') closeModal();
+    });
+
+    // Smooth scroll behavior for in-page links
+    (function enableSmoothScroll(){
+      if ('scrollBehavior' in document.documentElement.style) {
+        // native support
+        document.documentElement.style.scrollBehavior = "smooth";
+      } else {
+        // progressive enhancement - simple polyfill can go here if needed
+      }
+    })();
+
+  </script>
+</body>
+</html>

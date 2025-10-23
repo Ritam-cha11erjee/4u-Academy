@@ -105,8 +105,12 @@ document.addEventListener("DOMContentLoaded", function () {
     window.location.href = "CorporateCommunication.html";
   });
 
-  document.querySelector("#detail2")?.addEventListener("click", () => {
+  document.querySelector("#detail1")?.addEventListener("click", () => {
     window.location.href = "AdultBatch_Current.html";
+  });
+
+    document.querySelector("#detail2")?.addEventListener("click", () => {
+    window.location.href = "AdultBatch_Ladies.html";
   });
 
   document.querySelector("#detail3")?.addEventListener("click", () => {
