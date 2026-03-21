@@ -384,8 +384,8 @@ nav a:active {
              margin-top: 0;
              border-radius: 10px;
              box-shadow: 0 0 10px rgba(0,0,0,0.1);
-             width: 27vw;
-             aspect-ratio: 5/4.8;
+             width: 35vw;
+             aspect-ratio: 5/4.3;
              display: inline-block;
              text-align: left;
              padding: 0;
@@ -399,7 +399,13 @@ nav a:active {
          }
          .programTop{
             padding: 1% 10%;
-            height: 75%;
+            height: 55%;
+         }
+
+         .list2Col{
+          display: flex;
+          width: 95%;
+          justify-content: space-between;
          }
 
          .programTop1{
@@ -461,11 +467,11 @@ nav a:active {
  
  
          .programs .program h3 {
-             font-size: 1.3em;
+             font-size: 1.8em;
              margin-bottom: 2%;
          }
          .programs .program li {
-             font-size: 1.2vw;
+             font-size: 1.4vw;
              margin: 3% 0;
              padding: 0.7% 0%;
          }
@@ -484,7 +490,7 @@ nav a:active {
              font-weight: 600;
              margin-top: 0 !important;
              padding-left: 0 !important;
-             font-size: 75% !important; 
+             font-size: 100% !important; 
              margin-bottom: 1% !important;
          }
 

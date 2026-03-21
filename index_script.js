@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
     document.querySelector("#detail2")?.addEventListener("click", () => {
-    window.location.href = "AdultBatch_Ladies.html";
+    window.location.href = "KidsBatchPhonics.html";
   });
 
   document.querySelector("#detail3")?.addEventListener("click", () => {
