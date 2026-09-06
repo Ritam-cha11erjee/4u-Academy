@@ -48,31 +48,46 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!container) return;
 
     try {
-      // Bust cache to ensure visitors always fetch the latest 4 reels
       const res = await fetch('./videos.json?v=' + Date.now());
       if (!res.ok) throw new Error('Could not load videos.json');
 
       const videos = await res.json();
 
-      container.innerHTML = videos.map(vid => `
-  <div class="highlightVideos">
-    <blockquote 
-      class="instagram-media" 
-      data-instgrm-permalink="${vid.permalink}"
-      data-instgrm-version="14"
-      style="width: 100%; border: none; margin: 0; min-height: 320px;">
-    </blockquote>
-  </div>
-`).join('');
+      container.innerHTML = videos.map((vid, idx) => `
+      <div class="highlightVideos">
+        <video 
+          class="highlightVideos_video" 
+          id="highlightVid${idx}" 
+          src="${vid.videoUrl}" 
+          poster="${vid.thumbnail}"
+          loop 
+          muted 
+          playsinline 
+          preload="metadata">
+        </video>
+      </div>
+    `).join('');
 
-      // Render the Instagram iframes
-      if (window.instgrm) {
-        window.instgrm.Embeds.process();
-      }
+      // Re-attach hover preview (play on hover, pause on leave)
+      const highlightVideoElements = container.querySelectorAll(".highlightVideos_video");
+      highlightVideoElements.forEach(video => {
+        video.addEventListener("mouseover", () => video.play());
+        video.addEventListener("mouseleave", () => video.pause());
+        // On mobile / click, toggle play/pause
+        video.addEventListener("click", () => {
+          if (video.paused) {
+            video.play();
+          } else {
+            video.pause();
+          }
+        });
+      });
+
     } catch (err) {
       console.error('Error loading highlight videos:', err);
     }
   }
+
 
   loadHighlights();
 
