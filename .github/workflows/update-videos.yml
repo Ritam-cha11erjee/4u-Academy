@@ -2,8 +2,8 @@ name: Sync Social Videos
 
 on:
   schedule:
-    - cron: '0 */6 * * *' # Automatically checks every 6 hours
-  workflow_dispatch:        # Lets you trigger it manually anytime
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -23,7 +23,8 @@ jobs:
             const token = process.env.META_ACCESS_TOKEN;
             const accountId = process.env.META_ACCOUNT_ID;
             
-            const url = `https://graph.facebook.com/v21.0/${accountId}/media?fields=id,permalink,media_type,timestamp&access_token=${token}`;
+            // Added media_url and thumbnail_url to fields
+            const url = `https://graph.facebook.com/v21.0/${accountId}/media?fields=id,permalink,media_type,media_url,thumbnail_url,timestamp&access_token=${token}`;
             const res = await fetch(url);
             const data = await res.json();
             
@@ -35,7 +36,12 @@ jobs:
             const videos = data.data
               .filter(item => item.media_type === "VIDEO")
               .slice(0, 4)
-              .map(v => ({ id: v.id, permalink: v.permalink }));
+              .map(v => ({
+                id: v.id,
+                permalink: v.permalink,
+                videoUrl: v.media_url,
+                thumbnail: v.thumbnail_url || ""
+              }));
 
             fs.writeFileSync("videos.json", JSON.stringify(videos, null, 2));
           }
@@ -50,5 +56,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add videos.json
-          git commit -m "Auto-update featured videos" || exit 0
+          git commit -m "Auto-update featured videos with direct media links" || exit 0
           git push
