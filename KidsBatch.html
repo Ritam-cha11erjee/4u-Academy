@@ -25,9 +25,6 @@
 
 
     <style>
-
-
-
         .section {
             margin-bottom: 3rem;
             opacity: 0;
@@ -169,28 +166,28 @@
             }
 
             .syllabusContainer {
-            width: 90%;
-            margin-top: 2%;
-            margin-bottom: 5%;
-            background-color: #920000;
-            color: white;
-            padding: 3%;
-            border-radius: 20px 22px;
-        }
+                width: 90%;
+                margin-top: 2%;
+                margin-bottom: 5%;
+                background-color: #920000;
+                color: white;
+                padding: 3%;
+                border-radius: 20px 22px;
+            }
 
-        .syllabusContainer li {
-            list-style: disc;
-            font-size: 85%;
-            margin-bottom: 2%;
-            margin-left: 5%;
-            padding-right: 3%;
-        }
+            .syllabusContainer li {
+                list-style: disc;
+                font-size: 85%;
+                margin-bottom: 2%;
+                margin-left: 5%;
+                padding-right: 3%;
+            }
 
-        .syllabusContainer h2 {
-            color: white;
-            font-weight: bold;
-            margin-bottom: 3%;
-        }
+            .syllabusContainer h2 {
+                color: white;
+                font-weight: bold;
+                margin-bottom: 3%;
+            }
 
             .syllabus-group {
                 display: flex;
@@ -277,18 +274,17 @@
             }
 
             .button {
-                margin-left: 10%;
                 display: inline-block;
                 background-color: #c00;
                 color: white;
                 padding: 2% 2%;
                 font-size: 100%;
-                width: 30%;
+                width: 100%;
                 text-align: center;
                 font-weight: 600;
                 border-radius: 5px;
                 text-decoration: none;
-                margin-right: 3%;
+                margin-top: 8%;
                 border: none;
                 cursor: pointer;
                 transition: transform 0.5s;
@@ -427,6 +423,12 @@
             .daysTime {
                 font-size: 80%;
             }
+
+
+            .headingNavContainer {
+                display: flex;
+                gap: 50px;
+            }
         }
 
 
@@ -522,7 +524,7 @@
                 padding-right: 2%;
             }
 
-            
+
 
             .syllabusContainer {
                 margin-top: 2%;
@@ -783,56 +785,62 @@
                 border: none;
                 border-radius: 8px;
             }
+
+
+            .headingNavContainer {
+                display: block;
+            }
         }
 
-          .opacity-0 {
-    opacity: 0;
-  }
-  
-  .animate-fade-in {
-    animation: fadeIn 1s ease forwards;
-  }
-  
-  .animate-slide-up {
-    animation: slideUp 1s ease forwards;
-  }
-  
-  .delay-200 {
-    animation-delay: 0.2s;
-  }
-  
-  .delay-400 {
-    animation-delay: 0.4s;
-  }
-  
-  @keyframes fadeIn {
-    to {
-      opacity: 1;
-    }
-  }
-  
-  @keyframes slideUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+        .opacity-0 {
+            opacity: 0;
+        }
 
-  .section {
-  margin-bottom: 3rem;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.5s ease;
-}
+        .animate-fade-in {
+            animation: fadeIn 1s ease forwards;
+        }
 
-.section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+        .animate-slide-up {
+            animation: slideUp 1s ease forwards;
+        }
+
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-400 {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section {
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.5s ease;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 
@@ -876,24 +884,40 @@
 
             <div class="bg-white p-6">
                 <h1 class=" font-bold">English Communication - Kids<br></h1>
-                <h2 class="text-lg font-bold">Online Course - ₹1,499/month<br><br></h2>
+                <h2 class="text-lg font-bold">Online Course - ₹999/month<br><br></h2>
                 <div class="mt-4">
                     <h2 class="text-lg font-bold">Course Overview</h2>
                     <p class="mt-2">
                         Build essential English skills. <br>
                         Foster confidence and creative expression.<br>
-                        Make learning enjoyable.<br><br></p>
-                    <span class="font-bold daysTime">Bacthes: 5PM - 6PM (7yr - 11yr)<br>
-                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;9PM - 10PM (7yr - 11yr)<br>
-                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;7PM - 8PM (7yr - 11yr)<br>
-                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;8PM - 9PM (12yr - 16yr)<br><br>
-                        Class duration: 1 hour<br>
-                        Sessions: 3 Days per week&nbsp;&nbsp;&nbsp;</span>
-                    <div class="button"><a href="https://wa.me/message/NNZ2S7HFCVO2J1" target="_blank"
-                            class="messageBtn">
-                            <i class="fa-brands fa-whatsapp"></i> Message us
-                        </a> </div>
-
+                        Make learning enjoyable.<br><br>
+                    </p>
+                    <div class="headingNavContainer">
+                        <span>
+                            <span class="font-bold daysTime" style="display: inline-block; vertical-align: top;">
+                                Batches:
+                            </span>
+                            <p class="font-bold daysTime"
+                                style="margin-left: 10px; display: inline-block; vertical-align: top;">
+                                6PM - 7PM (6yr - 8yr)<br>
+                                5PM - 6PM (7yr - 11yr)<br>
+                                9PM - 10PM (7yr - 11yr)<br>
+                                7PM - 8PM (7yr - 11yr)<br>
+                                8PM - 9PM (12yr - 16yr)<br><br>
+                            </p>
+                        </span>
+                        <span>
+                            <div class="font-bold daysTime">
+                                Class duration: 1 hour<br>
+                                Sessions: 3 Days per week&nbsp;&nbsp;&nbsp;
+                            </div>
+                            <div class="button"><a href="https://wa.me/message/NNZ2S7HFCVO2J1" target="_blank"
+                                    class="messageBtn">
+                                    <i class="fa-brands fa-whatsapp"></i> Message us
+                                </a>
+                            </div>
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
