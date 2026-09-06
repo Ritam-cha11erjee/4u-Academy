@@ -311,36 +311,41 @@ nav a:active {
             margin-top: 0;
         }
 
-        .highlightContainer{
-            display: flex;
-            flex-direction: row;
-            padding: 2% 10%;
+        .highlightContainer {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 2% 8%;
+            max-width: 1400px;
+            margin: 0 auto;
             justify-content: center;
-            align-items: center;
-            margin: auto;
-            /* background-color: blue; */
-            flex-wrap: wrap;
+            align-items: start;
         }
 
-        .highlightVideos{
-            margin: 3% 3%;
-            transition: transform 1s;
-            box-shadow: 5px 5px 10px rgba(82, 0, 0, 0.719);
+        .highlightVideos {
+            margin: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
             border-radius: 0.5rem;
-
-
-        }
-        .highlightVideos:hover{
-            transform: scale(1.1);
-            transition: transform 0.3s;
+            transition: transform 0.3s ease;
         }
 
-        .highlightVideos_video{
-            height: 22.5vw;
-            object-fit: cover;
-            width: 15vw;
-            border-radius: 0.5rem;
+        .highlightVideos:hover {
+            transform: translateY(-4px);
         }
+
+        /* Targets the injected Instagram embed & its iframe */
+        .highlightVideos .instagram-media,
+        .highlightVideos iframe {
+            width: 100% !important;
+            max-width: 330px !important;
+            min-width: 280px !important;
+            border-radius: 0.5rem !important;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+            margin: 0 auto !important;
+        }
+
 
 
          .programs {
@@ -1384,38 +1389,35 @@ nav a:active {
         margin-top: 5%;
     }
 
-    .highlightContainer{
+    .highlightContainer {
         display: flex;
-        flex-direction: row;
-        padding: 2% 2%;
-        justify-content: center;
+        flex-direction: column;
         align-items: center;
+        gap: 2rem;
+        padding: 4% 5% 10%;
         margin: auto;
-        /* background-color: blue; */
-        flex-wrap: wrap;
-        padding-bottom: 10%;
     }
 
-    .highlightVideos{
-        margin: 3% 4%;
-        transition: transform 1s;
-        box-shadow: 5px 5px 10px rgba(82, 0, 0, 0.719);
-        border-radius: 0.5rem;
-
-
-    }
-    .highlightVideos:hover{
-        transform: scale(1.1);
-        transition: transform 0.3s;
+    .highlightVideos {
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
     }
 
-    .highlightVideos_video{
-        height: 36vw;
-        object-fit: cover;
-        width: 23.2vw;
-        border-radius: 0.5rem;
+    .highlightVideos:hover {
+        transform: none; /* Disables scaling on tap for mobile screens */
     }
 
+    /* Keeps reels centered and sized on mobile viewports */
+    .highlightVideos .instagram-media,
+    .highlightVideos iframe {
+        width: 100% !important;
+        min-width: 260px !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+    }
 
 
 
@@ -2196,3 +2198,5 @@ nav a:active {
     /* margin-left: 25%; */
   }
  }
+
+ 

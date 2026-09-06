@@ -1,14 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
 
   // ===== Scroll Navbar =====
-  const navbar = document.querySelector('header');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 10) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-  });
+  const navbar = document.querySelector('header') || document.getElementById("navbar");
+  if (navbar) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 10) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  }
 
   // ===== Mobile Navbar Toggle =====
   const menuToggle = document.getElementById("menu-toggle");
@@ -40,18 +42,39 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // ===== Highlight Video Hover Preview =====
-  let highlightVideos = document.querySelectorAll(".highlightVideos_video");
+  // ===== Dynamic Instagram Highlights Loader =====
+  async function loadHighlights() {
+    const container = document.getElementById('highlightContainer');
+    if (!container) return;
 
-  highlightVideos.forEach(highlightVideo => {
-    highlightVideo.addEventListener("mouseover", () => {
-      highlightVideo.play();
-    });
+    try {
+      // Bust cache to ensure visitors always fetch the latest 4 reels
+      const res = await fetch('./videos.json?v=' + Date.now());
+      if (!res.ok) throw new Error('Could not load videos.json');
 
-    highlightVideo.addEventListener("mouseleave", () => {
-      highlightVideo.pause();
-    });
-  });
+      const videos = await res.json();
+
+      container.innerHTML = videos.map(vid => `
+        <div class="highlightVideos">
+          <blockquote 
+            class="instagram-media" 
+            data-instgrm-permalink="${vid.permalink}"
+            data-instgrm-version="14"
+            style="width: 100%; border: none; margin: 0; min-height: 450px;">
+          </blockquote>
+        </div>
+      `).join('');
+
+      // Render the Instagram iframes
+      if (window.instgrm) {
+        window.instgrm.Embeds.process();
+      }
+    } catch (err) {
+      console.error('Error loading highlight videos:', err);
+    }
+  }
+
+  loadHighlights();
 
   // ===== Carousel =====
   const track = document.querySelector('.carousel-track');
@@ -61,6 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let currentIndex = 0;
 
   function updateCarousel() {
+    if (!track || items.length === 0) return;
     const itemWidth = items[0]?.offsetWidth || 0;
     track.style.transform = `translateX(-${currentIndex * (itemWidth + 25)}px)`;
   }
@@ -84,32 +108,30 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   window.addEventListener('resize', updateCarousel);
-  updateCarousel(); // initialize on load
+  updateCarousel();
 
   // ===== Enroll Button (Popup) =====
   document.querySelectorAll('.enroll-Btn').forEach(element => {
     element.addEventListener('click', function () {
-      document.getElementById('popup').style.display = 'flex';
+      const popup = document.getElementById('popup');
+      if (popup) popup.style.display = 'flex';
     });
   });
 
   const closeBtn = document.getElementById('closeBtn');
   if (closeBtn) {
     closeBtn.addEventListener('click', function () {
-      document.getElementById('popup').style.display = 'none';
+      const popup = document.getElementById('popup');
+      if (popup) popup.style.display = 'none';
     });
   }
 
   // ===== Detail Page Navigation =====
   document.querySelector("#detail1")?.addEventListener("click", () => {
-    window.location.href = "CorporateCommunication.html";
-  });
-
-  document.querySelector("#detail1")?.addEventListener("click", () => {
     window.location.href = "AdultBatch_Current.html";
   });
 
-    document.querySelector("#detail2")?.addEventListener("click", () => {
+  document.querySelector("#detail2")?.addEventListener("click", () => {
     window.location.href = "KidsBatchPhonics.html";
   });
 
@@ -117,35 +139,23 @@ document.addEventListener("DOMContentLoaded", function () {
     window.location.href = "KidsBatch.html";
   });
 
+  // ===== Fade In Sections on Scroll =====
+  const sections = document.querySelectorAll('.section');
 
-  // Fade in each section on scroll
-const sections = document.querySelectorAll('.section');
+  const revealOnScroll = () => {
+    const triggerBottom = window.innerHeight * 0.85;
 
-const revealOnScroll = () => {
-  const triggerBottom = window.innerHeight * 0.85;
+    sections.forEach(section => {
+      const sectionTop = section.getBoundingClientRect().top;
 
-  sections.forEach(section => {
-    const sectionTop = section.getBoundingClientRect().top;
+      if (sectionTop < triggerBottom) {
+        section.classList.add('visible');
+      }
+    });
+  };
 
-    if (sectionTop < triggerBottom) {
-      section.classList.add('visible');
-    }
-  });
-};
-
-window.addEventListener('scroll', revealOnScroll);
-window.addEventListener('load', revealOnScroll);
-
-
-
-  // Scroll Effect
-  window.addEventListener("scroll", () => {
-    const navbar = document.getElementById("navbar");
-    if (window.scrollY > 10) {
-      navbar.classList.add("scrolled");
-    } else {
-      navbar.classList.remove("scrolled");
-    }
-  });
+  window.addEventListener('scroll', revealOnScroll);
+  window.addEventListener('load', revealOnScroll);
+  revealOnScroll();
 
 });
