@@ -55,15 +55,15 @@ document.addEventListener("DOMContentLoaded", function () {
       const videos = await res.json();
 
       container.innerHTML = videos.map(vid => `
-        <div class="highlightVideos">
-          <blockquote 
-            class="instagram-media" 
-            data-instgrm-permalink="${vid.permalink}"
-            data-instgrm-version="14"
-            style="width: 100%; border: none; margin: 0; min-height: 450px;">
-          </blockquote>
-        </div>
-      `).join('');
+  <div class="highlightVideos">
+    <blockquote 
+      class="instagram-media" 
+      data-instgrm-permalink="${vid.permalink}"
+      data-instgrm-version="14"
+      style="width: 100%; border: none; margin: 0; min-height: 320px;">
+    </blockquote>
+  </div>
+`).join('');
 
       // Render the Instagram iframes
       if (window.instgrm) {

@@ -311,12 +311,13 @@ nav a:active {
             margin-top: 0;
         }
 
-        .highlightContainer {
+.highlightContainer {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            padding: 2% 8%;
-            max-width: 1400px;
+            /* Reduced minimum card width from 280px to 220px to allow 4 cards in a row */
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.25rem;
+            padding: 2% 6%;
+            max-width: 1200px;
             margin: 0 auto;
             justify-content: center;
             align-items: start;
@@ -335,12 +336,12 @@ nav a:active {
             transform: translateY(-4px);
         }
 
-        /* Targets the injected Instagram embed & its iframe */
+        /* Scaled down max-width for a compact card look */
         .highlightVideos .instagram-media,
         .highlightVideos iframe {
             width: 100% !important;
-            max-width: 330px !important;
-            min-width: 280px !important;
+            max-width: 250px !important;
+            min-width: 200px !important;
             border-radius: 0.5rem !important;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
             margin: 0 auto !important;
